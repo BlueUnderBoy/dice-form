@@ -1,12 +1,12 @@
-<h1><%= @dice %>d<%= @side %></h1>
+<h1><%= @dice %>d<%= @sides %></h1>
 
-<p><a href="/process_roll">Roll again</a> | <a href="/">Go back home</a></p>
+<p><a href="/process_roll?dice=<%= @dice %>&sides=<%= @sides %>">Roll again</a> | <a href="/">Go back home</a></p>
 
 <ol>
 
-  <% for(x in @rolls) %>
+  <% @rolls.each do |x| %>
 
-    <li><span style="font-style: italic">Result:</span><% x %></li>
+    <li><span style="font-style: italic">Result:</span><%= x %></li>
 
   <% end %>
 
